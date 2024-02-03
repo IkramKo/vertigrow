@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://baftff7xfx5dp"]
+
+[ext_resource type="Texture2D" uid="uid://cho0xrcrvdgqt" path="res://assets/basil.png" id="1_528br"]
+
+[node name="Basil" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(328, 202)
+texture = ExtResource("1_528br")

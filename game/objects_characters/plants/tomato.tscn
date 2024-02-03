@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d57ig62b2jnv"]
+
+[ext_resource type="Texture2D" uid="uid://dfb8k4rhn67m0" path="res://assets/tomato.png" id="1_h8c3d"]
+
+[node name="Tomato" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(280, 291)
+texture = ExtResource("1_h8c3d")

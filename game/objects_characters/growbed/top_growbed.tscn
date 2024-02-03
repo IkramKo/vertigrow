@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx7br7l1mo5xb"]
+
+[ext_resource type="Texture2D" uid="uid://uadlosib46dq" path="res://assets/top_growbed.png" id="1_th7jc"]
+
+[node name="Top Growbed" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(194, 57)
+texture = ExtResource("1_th7jc")
