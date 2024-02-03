@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://o54s7m4hopqd"]
+
+[ext_resource type="Texture2D" uid="uid://7ooh2twdtk7a" path="res://assets/wooden_shelf.png" id="1_rfyoe"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ax0md"]
+a = Vector2(-297, 35)
+b = Vector2(267, 35)
+
+[node name="Shelves" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_rfyoe")
+
+[node name="mid" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_ax0md")
+
+[node name="bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 174)
+shape = SubResource("SegmentShape2D_ax0md")
+
+[node name="top" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, -181)
+shape = SubResource("SegmentShape2D_ax0md")

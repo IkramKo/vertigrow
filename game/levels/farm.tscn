@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=4 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="PackedScene" uid="uid://c2m2nlxblelj8" path="res://objects_characters/fish.tscn" id="2_w08e8"]
+[ext_resource type="PackedScene" uid="uid://o54s7m4hopqd" path="res://objects_characters/shelves.tscn" id="3_gurjo"]
 
 [node name="Farm" type="Node2D"]
 
@@ -13,3 +14,6 @@ position = Vector2(96.4, 194.8)
 
 [node name="Fish2" parent="Tank" instance=ExtResource("2_w08e8")]
 position = Vector2(22, 128)
+
+[node name="Shelves" parent="." instance=ExtResource("3_gurjo")]
+position = Vector2(1618, 362)
