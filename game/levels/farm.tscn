@@ -26,7 +26,7 @@ position = Vector2(22, 128)
 position = Vector2(1630, 976)
 
 [node name="basil_seedbag" parent="." instance=ExtResource("5_ooju2")]
-position = Vector2(1679, 826)
+position = Vector2(1680, 819)
 
 [node name="tomato_seedbag" parent="." instance=ExtResource("6_31ubx")]
-position = Vector2(1508, 828)
+position = Vector2(1507, 812)
