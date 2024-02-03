@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2m2nlxblelj8"]
+[gd_scene load_steps=4 format=3 uid="uid://c2m2nlxblelj8"]
 
 [ext_resource type="Texture2D" uid="uid://cxg1axo5apsia" path="res://assets/fish.png" id="1_se7qr"]
+[ext_resource type="Script" path="res://objects_characters/fish.gd" id="1_utyam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrv4y"]
 size = Vector2(660, 533)
 
 [node name="Fish" type="CharacterBody2D"]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_utyam")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(708, 699)
