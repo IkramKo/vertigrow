@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+# Time
+#var start_time = OS.get_ticks_msec()
+
 # Movement variables
 var speed = 1600
 var movement = Vector2(0, 0)
@@ -9,45 +12,43 @@ var dead_fish = load("res://assets/dead_fish.png")
 
 # Fish attributes
 var health = 10
+var waste_rate = 0
+var age = 0
+var reproduction_rate = 0
 
 func _ready():
-	pass
+	init()
+	#start_time = OS.get_ticks_msec()
+	#pass
+	
+#func _process(delta):
+	#var current_time = OS.get_ticks_msec()
+	#var elapsed_time = (current_time - start_time) / 1000.0
+	#print("Elapsed time in seconds: ", elapsed_time)
+	
+func init():
+	sprite = get_child(0)
+	
+func flip_sprite():
+	sprite.flip_h = !sprite.flip_h
+	direction.x = -direction.x
 
 func kill_fish():
-	sprite.texture = dead_fish
-	direction = Vector2(0, 1)
-	sprite.flip_h = false
+	if health <= 0:	
+		sprite.texture = dead_fish
+		direction = Vector2(0, 1)
+		sprite.flip_h = false
+	 
+func set_health(health):	
+	health = health
 	
+func set_reproductive_rates(rate):
+	reproduction_rate = rate
+
+# Game loop	
 func _physics_process(delta):
-	sprite = get_child(0)
 	movement = direction * speed * delta
 	var collision = move_and_collide(movement * delta)
 	
 	if collision:
-		sprite.flip_h = !sprite.flip_h
-		direction.x = -direction.x
-
-	kill_fish()
-	#velocity = movement
-#
-	## Get the largest CollisionShape2D of the parent
-	#var largest_shape = null
-	#var max_length = 0
-	#for child_node in get_parent().get_children():
-		#for child in child_node.get_children():
-			#if child is CollisionShape2D:
-				#var length = 0
-				#if child.shape is SegmentShape2D:
-					#length = child.shape.b.distance_to(child.shape.a)
-				#else:
-					#length = child.shape.extents.length() * 2
-				#if length > max_length:
-					#max_length = length
-					#largest_shape = child
-				#print(largest_shape)
-	#
-	## Check if the character has hit the edge of the largest shape
-	#if largest_shape != null and global_position.distance_to(Vector2(0, 0)) > largest_shape.shape.extents.length() * 2:
-		#direction = direction * Vector2(-1, 1)
-	
-	#move_and_collide(direction)
+		flip_sprite()
