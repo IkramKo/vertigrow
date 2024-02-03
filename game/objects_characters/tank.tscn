@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0h865mx7eyp7"]
+
+[ext_resource type="Texture2D" uid="uid://u6cae1scv8p8" path="res://assets/water_tank.png" id="1_acr1q"]
+
+[node name="Tank" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 183)
+texture = ExtResource("1_acr1q")
