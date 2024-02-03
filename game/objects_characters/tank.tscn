@@ -1,9 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://0h865mx7eyp7"]
+[gd_scene load_steps=10 format=3 uid="uid://dfhantt8n0wts"]
 
 [ext_resource type="Texture2D" uid="uid://u6cae1scv8p8" path="res://assets/water_tank.png" id="1_acr1q"]
 
-[node name="Tank" type="StaticBody2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rkubs"]
+a = Vector2(28, 66)
+b = Vector2(26, 276)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(103, 183)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xajsk"]
+a = Vector2(172, 66)
+b = Vector2(174, 271)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_er7hj"]
+a = Vector2(68, 292)
+b = Vector2(28, 275)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sf468"]
+a = Vector2(132, 293)
+b = Vector2(67, 292)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w2xem"]
+a = Vector2(174, 272)
+b = Vector2(131, 293)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6edw4"]
+a = Vector2(74, 82)
+b = Vector2(29, 65)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bbla5"]
+a = Vector2(135, 80)
+b = Vector2(70, 80)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wyv21"]
+a = Vector2(171, 68)
+b = Vector2(132, 80)
+
+[node name="Tank" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(100, 183)
 texture = ExtResource("1_acr1q")
+
+[node name="Left border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_rkubs")
+
+[node name="Right border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_xajsk")
+
+[node name="Bottom-left border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_er7hj")
+
+[node name="Bottom-middle border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_sf468")
+
+[node name="Bottom-right border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_w2xem")
+
+[node name="Top-left border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_6edw4")
+
+[node name="Top-middle border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_bbla5")
+
+[node name="Top-right border" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_wyv21")
