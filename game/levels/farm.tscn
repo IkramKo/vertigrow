@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=7 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="PackedScene" uid="uid://c2m2nlxblelj8" path="res://objects_characters/fish.tscn" id="2_w08e8"]
 [ext_resource type="PackedScene" uid="uid://o54s7m4hopqd" path="res://objects_characters/shelves.tscn" id="3_gurjo"]
+[ext_resource type="PackedScene" uid="uid://djtq56ygvrbqv" path="res://objects_characters/background.tscn" id="4_7ghox"]
+[ext_resource type="PackedScene" uid="uid://bqot3skeg4r10" path="res://objects_characters/basil_seedbag.tscn" id="5_ooju2"]
+[ext_resource type="PackedScene" uid="uid://camsn3h07tinv" path="res://objects_characters/tomato_seedbag.tscn" id="6_31ubx"]
 
 [node name="Farm" type="Node2D"]
 
+[node name="Background" parent="." instance=ExtResource("4_7ghox")]
+position = Vector2(1030, 1025)
+
 [node name="Tank" parent="." instance=ExtResource("1_mxkgd")]
+position = Vector2(229, 603)
 scale = Vector2(2, 2)
 
 [node name="Fish" parent="Tank" instance=ExtResource("2_w08e8")]
@@ -16,4 +23,10 @@ position = Vector2(96.4, 194.8)
 position = Vector2(22, 128)
 
 [node name="Shelves" parent="." instance=ExtResource("3_gurjo")]
-position = Vector2(1618, 362)
+position = Vector2(1630, 976)
+
+[node name="basil_seedbag" parent="." instance=ExtResource("5_ooju2")]
+position = Vector2(1679, 826)
+
+[node name="tomato_seedbag" parent="." instance=ExtResource("6_31ubx")]
+position = Vector2(1508, 828)

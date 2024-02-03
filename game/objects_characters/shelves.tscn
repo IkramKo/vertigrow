@@ -7,7 +7,7 @@ a = Vector2(-297, 35)
 b = Vector2(267, 35)
 
 [node name="Shelves" type="Node2D"]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.75, 0.75)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

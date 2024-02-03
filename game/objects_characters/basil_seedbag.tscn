@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqot3skeg4r10"]
+
+[ext_resource type="Texture2D" uid="uid://d2rlc5t756vl4" path="res://assets/basil_seedbag.png" id="1_eww3u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m74k2"]
+radius = 288.0
+height = 764.0
+
+[node name="basil_seedbag" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_eww3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_m74k2")

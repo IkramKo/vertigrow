@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://camsn3h07tinv"]
+
+[ext_resource type="Texture2D" uid="uid://c1p8aqjos7trc" path="res://assets/tomato_seedbag.png" id="1_br255"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71p3"]
+size = Vector2(430, 690)
+
+[node name="tomato_seedbag" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_br255")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(9, -6)
+shape = SubResource("RectangleShape2D_g71p3")
