@@ -10,3 +10,6 @@ scale = Vector2(2, 2)
 
 [node name="Fish" parent="Tank" instance=ExtResource("2_w08e8")]
 position = Vector2(96.4, 194.8)
+
+[node name="Fish2" parent="Tank" instance=ExtResource("2_w08e8")]
+position = Vector2(22, 128)
