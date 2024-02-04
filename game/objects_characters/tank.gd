@@ -18,6 +18,8 @@ func set_collision_layers():
 
 func get_total_waste_rate():
 	var num_fishes = get_child_count() - 1
+	if num_fishes == 0:
+		return 0
 	var waste_rate = get_child(1).waste_rate
 	return num_fishes * waste_rate
 
