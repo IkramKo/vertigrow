@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=9 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="PackedScene" uid="uid://c2m2nlxblelj8" path="res://objects_characters/fish.tscn" id="2_w08e8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://djtq56ygvrbqv" path="res://objects_characters/background.tscn" id="4_7ghox"]
 [ext_resource type="PackedScene" uid="uid://bqot3skeg4r10" path="res://objects_characters/basil_seedbag.tscn" id="5_ooju2"]
 [ext_resource type="PackedScene" uid="uid://camsn3h07tinv" path="res://objects_characters/tomato_seedbag.tscn" id="6_31ubx"]
+[ext_resource type="PackedScene" uid="uid://5421bw6cbdbj" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
+[ext_resource type="PackedScene" uid="uid://dv0cwh1xgij7n" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
 
 [node name="Farm" type="Node2D"]
 
@@ -30,3 +32,9 @@ position = Vector2(1680, 819)
 
 [node name="tomato_seedbag" parent="." instance=ExtResource("6_31ubx")]
 position = Vector2(1507, 812)
+
+[node name="kale_seedbag" parent="." instance=ExtResource("7_kkfxx")]
+position = Vector2(1511, 951)
+
+[node name="fish_bag" parent="." instance=ExtResource("8_ck64m")]
+position = Vector2(1673, 953)

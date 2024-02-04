@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://drgjd4n7k6o6f"]
+
+[ext_resource type="Texture2D" uid="uid://rsllyoj3p13a" path="res://assets/shovel.png" id="1_g7a2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krxr3"]
+size = Vector2(742, 787.5)
+
+[node name="gardening_shovel" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_g7a2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16, -0.75)
+shape = SubResource("RectangleShape2D_krxr3")

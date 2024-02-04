@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv0cwh1xgij7n"]
+
+[ext_resource type="Texture2D" uid="uid://cw2s0y3tswvce" path="res://assets/fish_bag.png" id="1_baw5m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq3i5"]
+radius = 300.0
+height = 774.0
+
+[node name="fish_bag" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_baw5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 38)
+shape = SubResource("CapsuleShape2D_vq3i5")
