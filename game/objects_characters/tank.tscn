@@ -34,35 +34,35 @@ b = Vector2(70, 80)
 a = Vector2(171, 68)
 b = Vector2(132, 80)
 
-[node name="Tank" type="Node2D"]
+[node name="Tank" type="Node2D" groups=["Tank"]]
 scale = Vector2(2.5, 2.5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Tank"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["Tank"]]
 position = Vector2(100, 183)
 texture = ExtResource("1_acr1q")
 
-[node name="Left border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Left border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_rkubs")
 
-[node name="Right border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Right border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_xajsk")
 
-[node name="Bottom-left border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Bottom-left border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_er7hj")
 
-[node name="Bottom-middle border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Bottom-middle border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_sf468")
 
-[node name="Bottom-right border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Bottom-right border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_w2xem")
 
-[node name="Top-left border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Top-left border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_6edw4")
 
-[node name="Top-middle border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Top-middle border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_bbla5")
 
-[node name="Top-right border" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Top-right border" type="CollisionShape2D" parent="StaticBody2D" groups=["Tank"]]
 shape = SubResource("SegmentShape2D_wyv21")
