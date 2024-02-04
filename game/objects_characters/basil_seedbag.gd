@@ -30,6 +30,7 @@ func load_basil_row():
 		var new_basil_row = basil_scene.instantiate()
 		new_basil_row.name = "basil_row"
 		new_basil_row.position = Vector2(453, 387)
+		new_basil_row.script = preload("res://objects_characters/plants/basil_row.gd").new()		
 		self.growbed.add_child(new_basil_row)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -30,6 +30,7 @@ func load_tomato_row():
 		var new_tomato_row = tomato_scene.instantiate()
 		new_tomato_row.name = "tomato_row"
 		new_tomato_row.position = Vector2(445, 485)
+		new_tomato_row.script = preload("res://objects_characters/plants/tomato_row.gd").new()
 		self.growbed.add_child(new_tomato_row)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -30,6 +30,8 @@ func load_kale_row():
 		var new_kale_row = kale_scene.instantiate()
 		new_kale_row.name = "kale_row"
 		new_kale_row.position = Vector2(455, 220)
+		new_kale_row.script = preload("res://objects_characters/plants/kale_row.gd").new()
+
 		self.growbed.add_child(new_kale_row)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
