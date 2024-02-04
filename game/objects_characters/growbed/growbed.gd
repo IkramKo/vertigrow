@@ -36,3 +36,20 @@ func get_kale_row():
 		if "kale_row" in child.get_name().to_lower():
 			kale_row = child
 	return kale_row
+	
+func get_plants():
+	var plants = []
+	var tomato_row = self.get_tomato_row()
+	var basil_row = self.get_basil_row()
+	var kale_row = self.get_kale_row()
+	
+	if tomato_row.has_method("set_health"):
+		plants.append(tomato_row)
+	if basil_row.has_method("set_health"):
+		plants.append(basil_row)
+	if kale_row.has_method("set_health"):
+		plants.append(kale_row)
+	return plants
+	
+#func increase_age():
+	

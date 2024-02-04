@@ -2,7 +2,7 @@ extends Node2D
 
 # timer vcars
 var age_timer = Timer.new()
-var age_increment_interval = 120
+var age_increment_interval = 10
 
 var health_timer = Timer.new()
 var health_change_interval = 1
@@ -42,6 +42,10 @@ func setup_health_timer():
 	add_child(self.health_timer)
 	self.health_timer.start()
 
+func _increase_plant_age():
+	var children = growbed.get_plants()
+	for plant in children:
+		plant.increase_age()
 
 func _increase_fish_age():
 	var children = fish_tank.get_all_fish()

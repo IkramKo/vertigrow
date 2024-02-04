@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drgjd4n7k6o6f"]
+[gd_scene load_steps=4 format=3 uid="uid://bk1lbsl3lave1"]
 
+[ext_resource type="Script" path="res://objects_characters/gardening_shovel.gd" id="1_70t7q"]
 [ext_resource type="Texture2D" uid="uid://rsllyoj3p13a" path="res://assets/shovel.png" id="1_g7a2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krxr3"]
@@ -7,6 +8,7 @@ size = Vector2(742, 787.5)
 
 [node name="gardening_shovel" type="Node2D"]
 scale = Vector2(0.12, 0.12)
+script = ExtResource("1_70t7q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
