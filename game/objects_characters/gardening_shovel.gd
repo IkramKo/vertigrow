@@ -22,21 +22,18 @@ func remove_oldest_plant():
 	var basil_row = growbed.get_basil_row()
 	var kale_row = growbed.get_kale_row()
 	
-	if tomato_row.name == "tomato_row":
+	if "tomato_row" in tomato_row.name:
 		plants.append(tomato_row)
-	if basil_row.name == "basil_row":
+	if "basil_row" in basil_row.name:
 		plants.append(basil_row)
-	if kale_row.name == "kale_row":
+	if "kale_row" in kale_row.name:
 		plants.append(kale_row)
-
-
-	
-	
-	
+	#print(len(plants))
 	if len(plants) > 0:
 		#var oldest_plant = plants[0]
 		#for plant in plants:
 			#if plant.age > oldest_plant.age or plant.health <= 0:
 				#oldest_plant = plant
-			growbed.remove_child(plants[len(plants)-1])		
+		growbed.remove_child(plants[0])	
+			
 	#tank.remove_child(children[0])
