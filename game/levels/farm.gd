@@ -54,8 +54,6 @@ func asses_farm_stability():
 	var kale_row = self.growbed.get_kale_row()
 	var basil_row = self.growbed.get_basil_row()
 	
-	
-	
 	# Total waste rate
 	var total_waste_rate = self.fish_tank.get_total_waste_rate()
 
@@ -64,11 +62,9 @@ func asses_farm_stability():
 	var kale_row_f_rate = 0 
 	var basil_row_f_rate = 0
 	
-	if kale_row:
+	if kale_row.has_method("get_filtering_rate") and tomato_row.has_method("get_filtering_rate") and basil_row.has_method("get_filtering_rate"):
 		kale_row_f_rate = kale_row.get_filtering_rate()
-	if tomato_row:
 		tomato_row_f_rate = tomato_row.get_filtering_rate()
-	if basil_row:
 		basil_row_f_rate = kale_row.get_filtering_rate()
 	
 	var total_filtering_rate = tomato_row_f_rate + kale_row_f_rate + basil_row_f_rate
@@ -79,30 +75,26 @@ func asses_farm_stability():
 	var new_water_qual = self.curr_water_quality
 	if result > 0:
 		new_water_qual = max(new_water_qual - log(result), 0)
-		
-	elif result < 0: # Not enough nutrients for plants
+	elif result < 0 and kale_row.has_method("set_health") and tomato_row.has_method("set_health") and basil_row.has_method("set_health"): # Not enough nutrients for plants
 		tomato_row.set_health(tomato_row.get_health() - 1)
 		kale_row.set_health(tomato_row.get_health() - 1)
 		basil_row.set_health(basil_row.get_health() - 1)
+		new_water_qual = min(new_water_qual + log(-result), 8)
 	
 	print("New Water quality: ", new_water_qual)
 	self.curr_water_quality = new_water_qual
 	
 	if self.curr_water_quality <= 6.5 or self.curr_water_quality >= 7.5:
-		if tomato_row:
+		if tomato_row.has_method("set_health"):
 			tomato_row.set_health(tomato_row.get_health() - 1)
-			
-		if kale_row:
+		if kale_row.has_method("set_health"):
 			kale_row.set_health(tomato_row.get_health() - 1)
-		if basil_row:
+		if basil_row.has_method("set_health"):
 			basil_row.set_health(basil_row.get_health() - 1)
 		self.fish_tank.reduce_tank_health()
 	
 	print("Water quality: ", self.curr_water_quality)
 	print("Waste rate:", total_waste_rate)
-	print("Tomato row health:", tomato_row.get_health())
-	print("Kale row health:", kale_row.get_health())
-	print("Basil row health:", basil_row.get_health())
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

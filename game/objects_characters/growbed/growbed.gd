@@ -12,7 +12,7 @@ func _process(delta):
 
 func get_tomato_row():
 	var children = self.get_children()
-	var tomato_row = null
+	var tomato_row = Node2D.new()
 	
 	for child in children:
 		if "tomato_row" in child.get_name().to_lower():
@@ -21,7 +21,7 @@ func get_tomato_row():
 	
 func get_basil_row():
 	var children = self.get_children()
-	var basil_row = null
+	var basil_row = Node2D.new()
 	
 	for child in children:
 		if "basil_row" in child.get_name().to_lower():
@@ -30,7 +30,7 @@ func get_basil_row():
 	
 func get_kale_row():
 	var children = self.get_children()
-	var kale_row = null
+	var kale_row = Node2D.new()
 	
 	for child in children:
 		if "kale_row" in child.get_name().to_lower():

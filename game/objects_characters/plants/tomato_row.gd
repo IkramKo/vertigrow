@@ -21,6 +21,8 @@ func get_filering_rate():
 	return num_plants_alive * filtering_rate
 
 func get_health():
+	if get_child_count() == 0:
+		return 0
 	return get_child(0).health
 
 func set_health(new_health):
