@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://baftff7xfx5dp"]
+[gd_scene load_steps=3 format=3 uid="uid://baftff7xfx5dp"]
 
 [ext_resource type="Texture2D" uid="uid://cho0xrcrvdgqt" path="res://assets/basil.png" id="1_528br"]
+[ext_resource type="Script" path="res://objects_characters/plants/basil.gd" id="1_trhkc"]
 
 [node name="Basil" type="Node2D"]
+script = ExtResource("1_trhkc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

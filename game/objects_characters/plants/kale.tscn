@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccw71vqdt3rmj"]
+[gd_scene load_steps=3 format=3 uid="uid://ccw71vqdt3rmj"]
 
 [ext_resource type="Texture2D" uid="uid://c785knnfdudyv" path="res://assets/kale.png" id="1_lu6oo"]
+[ext_resource type="Script" path="res://objects_characters/plants/kale.gd" id="1_toe5s"]
 
 [node name="Kale" type="Node2D"]
+script = ExtResource("1_toe5s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
