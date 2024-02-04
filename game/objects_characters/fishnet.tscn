@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjcg7echwx5bs"]
+
+[ext_resource type="Texture2D" uid="uid://b1cnnroj0u82b" path="res://assets/fishnet.png" id="1_8tmle"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmmkk"]
+radius = 500.703
+
+[node name="fishnet" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_8tmle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24, 48)
+shape = SubResource("CircleShape2D_gmmkk")
