@@ -1,8 +1,11 @@
 extends Node2D
 
 # timer vcars
-var timer = Timer.new()
+var age_timer = Timer.new()
 var age_increment_interval = 120
+
+var health_timer = Timer.new()
+var health_change_interval = 1
 
 var fish_tank = get_child(1)
 var shelves = get_child(2)
@@ -18,20 +21,27 @@ func init():
 	self.fish_tank = get_child(1)
 	self.shelves = get_child(2)
 	self.growbed = get_child(3)
-	asses_farm_stability()
 	setup_age_timer()
+	setup_health_timer()
 
 func setup_age_timer():
-	timer.set_wait_time(age_increment_interval)
-	timer.set_one_shot(false)
-	timer.connect("timeout", _on_age_timer_timeout)
-	add_child(timer)
-	timer.start()
-
+	age_timer.set_wait_time(age_increment_interval)
+	age_timer.set_one_shot(false)
+	age_timer.connect("timeout", _on_age_timer_timeout)
+	add_child(age_timer)
+	age_timer.start()
 
 func _on_age_timer_timeout():
 	#_increase_plant_age()
 	_increase_fish_age()
+
+func setup_health_timer():
+	self.health_timer.set_wait_time(health_change_interval)
+	self.health_timer.set_one_shot(false)
+	self.health_timer.connect("timeout", asses_farm_stability)
+	add_child(self.health_timer)
+	self.health_timer.start()
+
 
 func _increase_fish_age():
 	var children = fish_tank.get_all_fish()
@@ -68,7 +78,8 @@ func asses_farm_stability():
 	var result = total_waste_rate - total_filtering_rate
 	var new_water_qual = self.curr_water_quality
 	if result > 0:
-		new_water_qual -= log(result)
+		new_water_qual = max(new_water_qual - log(result), 0)
+		
 	elif result < 0: # Not enough nutrients for plants
 		tomato_row.set_health(tomato_row.get_health() - 1)
 		kale_row.set_health(tomato_row.get_health() - 1)
@@ -86,7 +97,13 @@ func asses_farm_stability():
 		if basil_row:
 			basil_row.set_health(basil_row.get_health() - 1)
 		self.fish_tank.reduce_tank_health()
-		
+	
+	print("Water quality: ", self.curr_water_quality)
+	print("Waste rate:", total_waste_rate)
+	print("Tomato row health:", tomato_row.get_health())
+	print("Kale row health:", kale_row.get_health())
+	print("Basil row health:", basil_row.get_health())
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

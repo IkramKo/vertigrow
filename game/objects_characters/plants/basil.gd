@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 10
+var health = 5
 var filering_rate = 1
 var dead_basil = load("res://assets/dead_basil.png")
 var sprite = get_child(0)

@@ -22,7 +22,7 @@ func remove_oldest_fish():
 	if len(children) > 0:
 		var oldest_fish = children[0]
 		for fish in children:
-			if fish.age > oldest_fish.age:
+			if fish.age > oldest_fish.age or fish.health <= 0:
 				oldest_fish = fish
 		tank.remove_child(oldest_fish)		
 	#tank.remove_child(children[0])
