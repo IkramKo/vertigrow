@@ -15,8 +15,10 @@ func get_num_plants_alive():
 	
 func get_filering_rate():
 	var num_plants_alive = get_num_plants_alive()
-	var filering_rate = get_child(0).filering_rate
-	return num_plants_alive * filering_rate
+	var filtering_rate = 0
+	if get_child_count() > 0:
+		filtering_rate = get_child(0).filering_rate
+	return num_plants_alive * filtering_rate
 
 func get_health():
 	return get_child(0).health

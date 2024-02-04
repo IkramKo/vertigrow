@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqot3skeg4r10"]
+[gd_scene load_steps=4 format=3 uid="uid://bqot3skeg4r10"]
 
+[ext_resource type="Script" path="res://objects_characters/basil_seedbag.gd" id="1_8m3x1"]
 [ext_resource type="Texture2D" uid="uid://d2rlc5t756vl4" path="res://assets/basil_seedbag.png" id="1_eww3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m74k2"]
@@ -8,6 +9,7 @@ height = 764.0
 
 [node name="basil_seedbag" type="Node2D"]
 scale = Vector2(0.15, 0.15)
+script = ExtResource("1_8m3x1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

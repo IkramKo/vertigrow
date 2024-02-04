@@ -18,7 +18,7 @@ func _input(event):
 
 func remove_oldest_fish():
 	var children = tank.get_all_fish()
-	print(len(children))
+	
 	if len(children) > 0:
 		var oldest_fish = children[0]
 		for fish in children:

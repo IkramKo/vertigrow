@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=16 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="Script" path="res://levels/farm.gd" id="1_qmagj"]
@@ -8,18 +8,13 @@
 [ext_resource type="Script" path="res://objects_characters/tank.gd" id="4_s5tne"]
 [ext_resource type="PackedScene" uid="uid://bqot3skeg4r10" path="res://objects_characters/basil_seedbag.tscn" id="5_ooju2"]
 [ext_resource type="PackedScene" uid="uid://camsn3h07tinv" path="res://objects_characters/tomato_seedbag.tscn" id="6_31ubx"]
-[ext_resource type="PackedScene" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
+[ext_resource type="PackedScene" uid="uid://cogvc4b32pop5" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
 [ext_resource type="PackedScene" uid="uid://b6oqs1vntxoej" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
 [ext_resource type="PackedScene" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
 [ext_resource type="PackedScene" uid="uid://ci7h1asps1urw" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+[ext_resource type="Script" path="res://objects_characters/tomato_seedbag.gd" id="11_bymd2"]
 [ext_resource type="Script" path="res://objects_characters/fish_bag.gd" id="11_nnbw1"]
 [ext_resource type="PackedScene" uid="uid://ccdul6ay2pf13" path="res://objects_characters/growbed/growbed.tscn" id="12_rv0us"]
-[ext_resource type="PackedScene" uid="uid://omwq1guf4ale" path="res://objects_characters/plants/tomato_row.tscn" id="13_137p6"]
-[ext_resource type="PackedScene" uid="uid://cr0yuv8lxtulq" path="res://objects_characters/plants/kale_row.tscn" id="14_fqge0"]
-[ext_resource type="PackedScene" uid="uid://o76p176yayaa" path="res://objects_characters/plants/basil_row.tscn" id="15_6tcjb"]
-[ext_resource type="Script" path="res://objects_characters/plants/tomato_row.gd" id="15_qmyto"]
-[ext_resource type="Script" path="res://objects_characters/plants/kale_row.gd" id="17_he5x4"]
-[ext_resource type="Script" path="res://objects_characters/plants/basil_row.gd" id="19_m7xbo"]
 
 [node name="Farm" type="Node2D"]
 script = ExtResource("1_qmagj")
@@ -56,6 +51,7 @@ scale = Vector2(0.2, 0.2)
 [node name="tomato_seedbag" parent="Shelves" instance=ExtResource("6_31ubx")]
 position = Vector2(-164, -218.667)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("11_bymd2")
 
 [node name="kale_seedbag" parent="Shelves" instance=ExtResource("7_kkfxx")]
 position = Vector2(-158.667, -33.3334)
@@ -69,15 +65,3 @@ script = ExtResource("11_nnbw1")
 [node name="growbed" parent="." instance=ExtResource("12_rv0us")]
 position = Vector2(325, 580)
 scale = Vector2(1.15, 1.15)
-
-[node name="tomato_row" parent="growbed" instance=ExtResource("13_137p6")]
-position = Vector2(445.217, 490.435)
-script = ExtResource("15_qmyto")
-
-[node name="kale_row" parent="growbed" instance=ExtResource("14_fqge0")]
-position = Vector2(453.913, 369.565)
-script = ExtResource("17_he5x4")
-
-[node name="basil_row" parent="growbed" instance=ExtResource("15_6tcjb")]
-position = Vector2(452.174, 239.13)
-script = ExtResource("19_m7xbo")
