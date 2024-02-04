@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=12 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="PackedScene" uid="uid://c2m2nlxblelj8" path="res://objects_characters/fish.tscn" id="2_w08e8"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://djtq56ygvrbqv" path="res://objects_characters/background.tscn" id="4_7ghox"]
 [ext_resource type="PackedScene" uid="uid://bqot3skeg4r10" path="res://objects_characters/basil_seedbag.tscn" id="5_ooju2"]
 [ext_resource type="PackedScene" uid="uid://camsn3h07tinv" path="res://objects_characters/tomato_seedbag.tscn" id="6_31ubx"]
-[ext_resource type="PackedScene" uid="uid://5421bw6cbdbj" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
-[ext_resource type="PackedScene" uid="uid://dv0cwh1xgij7n" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
-[ext_resource type="PackedScene" uid="uid://drgjd4n7k6o6f" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
-[ext_resource type="PackedScene" uid="uid://cjcg7echwx5bs" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+[ext_resource type="PackedScene" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
+[ext_resource type="PackedScene" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
+[ext_resource type="PackedScene" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
+[ext_resource type="PackedScene" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+[ext_resource type="Script" path="res://objects_characters/fish_bag.gd" id="11_nnbw1"]
 
 [node name="Farm" type="Node2D"]
 
@@ -29,20 +30,27 @@ position = Vector2(22, 128)
 [node name="Shelves" parent="." instance=ExtResource("3_gurjo")]
 position = Vector2(1630, 976)
 
-[node name="basil_seedbag" parent="." instance=ExtResource("5_ooju2")]
-position = Vector2(1680, 819)
+[node name="fishnet" parent="Shelves" instance=ExtResource("10_ov42f")]
+position = Vector2(56, 150.667)
+scale = Vector2(0.133333, 0.133333)
 
-[node name="tomato_seedbag" parent="." instance=ExtResource("6_31ubx")]
-position = Vector2(1507, 812)
+[node name="gardening_shovel" parent="Shelves" instance=ExtResource("9_howm3")]
+position = Vector2(-150.667, 146.667)
+scale = Vector2(0.16, 0.16)
 
-[node name="kale_seedbag" parent="." instance=ExtResource("7_kkfxx")]
-position = Vector2(1511, 951)
+[node name="basil_seedbag" parent="Shelves" instance=ExtResource("5_ooju2")]
+position = Vector2(66.6665, -209.333)
+scale = Vector2(0.2, 0.2)
 
-[node name="fish_bag" parent="." instance=ExtResource("8_ck64m")]
-position = Vector2(1673, 953)
+[node name="tomato_seedbag" parent="Shelves" instance=ExtResource("6_31ubx")]
+position = Vector2(-164, -218.667)
+scale = Vector2(0.2, 0.2)
 
-[node name="gardening_shovel" parent="." instance=ExtResource("9_howm3")]
-position = Vector2(1517, 1086)
+[node name="kale_seedbag" parent="Shelves" instance=ExtResource("7_kkfxx")]
+position = Vector2(-158.667, -33.3334)
+scale = Vector2(0.2, 0.2)
 
-[node name="fishnet" parent="." instance=ExtResource("10_ov42f")]
-position = Vector2(1672, 1089)
+[node name="fish_bag" parent="Shelves" instance=ExtResource("8_ck64m")]
+position = Vector2(57.3333, -30.6666)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_nnbw1")
