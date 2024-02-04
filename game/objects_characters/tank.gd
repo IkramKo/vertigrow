@@ -21,6 +21,21 @@ func get_total_waste_rate():
 	var waste_rate = get_child(1).waste_rate
 	return num_fishes * waste_rate
 
+func reduce_tank_health():
+	var num_fishes = get_child_count() - 1 # How many points we will have to dock
+	var fishes = get_children() # Only from index 1
+	
+	var health_to_reduce = num_fishes
+	
+	for idx in range(num_fishes - 1, 1, -1):
+		var fish_health = fishes[idx].health
+		fishes[idx].set_health(min(health_to_reduce, fish_health))
+		fishes[idx].kill_fish()
+		
+		if health_to_reduce <= 0:
+			break
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

@@ -8,10 +8,17 @@
 [ext_resource type="Script" path="res://objects_characters/tank.gd" id="4_s5tne"]
 [ext_resource type="PackedScene" uid="uid://bqot3skeg4r10" path="res://objects_characters/basil_seedbag.tscn" id="5_ooju2"]
 [ext_resource type="PackedScene" uid="uid://camsn3h07tinv" path="res://objects_characters/tomato_seedbag.tscn" id="6_31ubx"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
 [ext_resource type="PackedScene" uid="uid://b6oqs1vntxoej" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
 [ext_resource type="PackedScene" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
 [ext_resource type="PackedScene" uid="uid://ci7h1asps1urw" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+=======
+[ext_resource type="PackedScene" uid="uid://5421bw6cbdbj" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
+[ext_resource type="PackedScene" uid="uid://dv0cwh1xgij7n" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
+[ext_resource type="PackedScene" uid="uid://drgjd4n7k6o6f" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
+[ext_resource type="PackedScene" uid="uid://cjcg7echwx5bs" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+>>>>>>> d2d4101 (stuff)
 [ext_resource type="Script" path="res://objects_characters/fish_bag.gd" id="11_nnbw1"]
 [ext_resource type="PackedScene" uid="uid://ccdul6ay2pf13" path="res://objects_characters/growbed/growbed.tscn" id="12_rv0us"]
 [ext_resource type="PackedScene" uid="uid://omwq1guf4ale" path="res://objects_characters/plants/tomato_row.tscn" id="13_137p6"]

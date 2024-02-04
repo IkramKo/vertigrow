@@ -18,6 +18,9 @@ func get_filtering_rate():
 	var filering_rate = get_child(0).filering_rate
 	return num_plants_alive * filering_rate
 
+func get_health():
+	return get_child(0).health
+
 func set_health(new_health):
 	var plants = get_children()
 	for plant in plants:

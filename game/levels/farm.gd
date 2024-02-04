@@ -18,7 +18,7 @@ func init():
 	self.fish_tank = get_child(1)
 	self.shelves = get_child(2)
 	self.growbed = get_child(3)
-	calc_water_quality()
+	asses_farm_stability()
 	setup_age_timer()
 
 func setup_age_timer():
@@ -35,14 +35,11 @@ func _on_age_timer_timeout():
 
 func _increase_fish_age():
 	var children = fish_tank.get_all_fish()
-	
 	for fish in children:
 		fish.increase_age()
-		
 
-func calc_water_quality():
+func asses_farm_stability():
 
-	#var children = growbed.get_children()
 	var tomato_row = self.growbed.get_child(4)
 	var kale_row = self.growbed.get_child(5)
 	var basil_row = self.growbed.get_child(6)
@@ -60,15 +57,23 @@ func calc_water_quality():
 	# If > 0: we have too many fishes -> water quality goes down = --health for fishes and plants
 	# else: perfect
 	var result = total_waste_rate - total_filtering_rate
-	
 	var new_water_qual = self.curr_water_quality
 	if result > 0:
 		new_water_qual -= log(result)
+	elif result < 0: # Not enough nutrients for plants
+		tomato_row.set_health(tomato_row.get_health() - 1)
+		kale_row.set_health(tomato_row.get_health() - 1)
+		basil_row.set_health(basil_row.get_health() - 1)
 	
 	print("New Water quality: ", new_water_qual)
+	self.curr_water_quality = new_water_qual
 	
-	return new_water_qual
-	
+	if self.curr_water_quality <= 6.5 or self.curr_water_quality >= 7.5:
+		tomato_row.set_health(tomato_row.get_health() - 1)
+		kale_row.set_health(tomato_row.get_health() - 1)
+		basil_row.set_health(basil_row.get_health() - 1)
+		self.fish_tank.reduce_tank_health()
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
