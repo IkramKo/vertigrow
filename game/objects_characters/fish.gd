@@ -13,7 +13,7 @@ var sprite = get_child(0)
 var dead_fish = load("res://assets/dead_fish.png") 
 
 # Fish attributes
-var health = 10
+var health = 5
 var waste_rate = 5
 var age = 0
 var reproduction_rate = 0
