@@ -1,4 +1,4 @@
-#extends Node2D
+extends Node2D
 #
 ## Load the scene you want to instantiate
 ##var child_scene = preload("res://path_to_your_scene.tscn")

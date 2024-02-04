@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://omwq1guf4ale"]
+
+[ext_resource type="PackedScene" uid="uid://d57ig62b2jnv" path="res://objects_characters/plants/tomato.tscn" id="1_cwp4p"]
+
+[node name="tomato_row" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+
+[node name="Tomato2" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(26.6667, -6.66667)
+
+[node name="Tomato" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(326.667, 0)
+
+[node name="Tomato3" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(653.333, 0)
+
+[node name="Tomato4" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(986.667, 6.66667)
+
+[node name="Tomato5" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(1286.67, 0)
+
+[node name="Tomato6" parent="." instance=ExtResource("1_cwp4p")]
+position = Vector2(1620, 0)
