@@ -12,7 +12,7 @@ var dead_fish = load("res://assets/dead_fish.png")
 
 # Fish attributes
 var health = 10
-var waste_rate = 0
+var waste_rate = 5
 var age = 0
 var reproduction_rate = 0
 
@@ -40,7 +40,7 @@ func kill_fish():
 		sprite.flip_h = false
 	 
 func set_health(health):	
-	health = health
+	self.health = health
 	
 func set_reproductive_rates(rate):
 	reproduction_rate = rate

@@ -1,6 +1,7 @@
 extends Node2D
 
 var health = 10
+var filering_rate = 3
 var dead_tomato = load("res://assets/dead_tomato.png")
 var sprite = get_child(0)
 
@@ -17,6 +18,9 @@ func kill_tomato():
 
 func set_health(health):	
 	self.health = health
+
+func get_health():
+	return self.health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
