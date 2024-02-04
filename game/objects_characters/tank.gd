@@ -29,9 +29,6 @@ func reduce_tank_health():
 	
 	var health_to_reduce = num_fishes
 	
-	print("Health to reduce: ", health_to_reduce)
-	print("Num fish: ", num_fishes)
-	# 0 | (1 2)
 	for idx in range(num_fishes, 1, -1):
 		var fish_health = fishes[idx].health
 		var health_to_remove = min(fish_health, health_to_reduce)

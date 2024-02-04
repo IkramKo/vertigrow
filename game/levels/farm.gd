@@ -69,13 +69,17 @@ func asses_farm_stability():
 	var kale_row_f_rate = 0 
 	var basil_row_f_rate = 0
 	
-	if kale_row.has_method("get_filtering_rate"):
+	print(kale_row.name)
+	print(tomato_row.name)
+	print(basil_row.name)
+	
+	if kale_row.name == "kale_row":
 		kale_row_f_rate = kale_row.get_filtering_rate()
 		print("HELLO KALE")
-	if tomato_row.has_method("get_filtering_rate"):
+	if tomato_row.name == "kale_row":
 		tomato_row_f_rate = tomato_row.get_filtering_rate()
 		print("HELLO TOMATO")
-	if basil_row.has_method("get_filtering_rate"):
+	if basil_row.name == "basil_row":
 		basil_row_f_rate = kale_row.get_filtering_rate()
 		print("HELLO BASIL")
 	
@@ -93,7 +97,6 @@ func asses_farm_stability():
 		basil_row.set_health(basil_row.get_health() - 1)
 		new_water_qual = min(new_water_qual + log(-result), 8)
 	
-	print("New Water quality: ", new_water_qual)
 	self.curr_water_quality = new_water_qual
 	
 	if self.curr_water_quality <= 6.5 or self.curr_water_quality >= 7.5:
