@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt478jey4ly4e"]
+[gd_scene load_steps=16 format=3 uid="uid://bt478jey4ly4e"]
 
 [ext_resource type="PackedScene" uid="uid://dfhantt8n0wts" path="res://objects_characters/tank.tscn" id="1_mxkgd"]
 [ext_resource type="PackedScene" uid="uid://c2m2nlxblelj8" path="res://objects_characters/fish.tscn" id="2_w08e8"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://objects_characters/fish_bag.gd" id="11_nnbw1"]
 [ext_resource type="PackedScene" uid="uid://ccdul6ay2pf13" path="res://objects_characters/growbed/growbed.tscn" id="12_rv0us"]
 [ext_resource type="PackedScene" uid="uid://omwq1guf4ale" path="res://objects_characters/plants/tomato_row.tscn" id="13_137p6"]
+[ext_resource type="PackedScene" uid="uid://cr0yuv8lxtulq" path="res://objects_characters/plants/kale_row.tscn" id="14_fqge0"]
+[ext_resource type="PackedScene" uid="uid://o76p176yayaa" path="res://objects_characters/plants/basil_row.tscn" id="15_6tcjb"]
 
 [node name="Farm" type="Node2D"]
 
@@ -63,3 +65,9 @@ scale = Vector2(1.15, 1.15)
 
 [node name="tomato_row" parent="growbed" instance=ExtResource("13_137p6")]
 position = Vector2(445.217, 490.435)
+
+[node name="kale_row" parent="growbed" instance=ExtResource("14_fqge0")]
+position = Vector2(453.913, 369.565)
+
+[node name="basil_row" parent="growbed" instance=ExtResource("15_6tcjb")]
+position = Vector2(452.174, 239.13)

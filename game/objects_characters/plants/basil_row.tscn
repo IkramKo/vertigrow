@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://o76p176yayaa"]
+
+[ext_resource type="PackedScene" uid="uid://baftff7xfx5dp" path="res://objects_characters/plants/basil.tscn" id="1_5m64q"]
+
+[node name="basil_row" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="Basil" parent="." instance=ExtResource("1_5m64q")]
+
+[node name="Basil2" parent="." instance=ExtResource("1_5m64q")]
+position = Vector2(530, 0)
+scale = Vector2(1, 1)
+
+[node name="Basil3" parent="." instance=ExtResource("1_5m64q")]
+position = Vector2(1010, 0)
+scale = Vector2(1, 1)
+
+[node name="Basil4" parent="." instance=ExtResource("1_5m64q")]
+position = Vector2(1530, 0)
+scale = Vector2(1, 1)
+
+[node name="Basil5" parent="." instance=ExtResource("1_5m64q")]
+position = Vector2(2000, 0)
+scale = Vector2(1, 1)
+
+[node name="Basil6" parent="." instance=ExtResource("1_5m64q")]
+position = Vector2(2470, -10)
+scale = Vector2(1, 1)
