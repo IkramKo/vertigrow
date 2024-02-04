@@ -18,11 +18,11 @@ func _input(event):
 
 func remove_oldest_fish():
 	var children = tank.get_all_fish()
-	var oldest_fish = null
-	
-	for fish in children:
-		print(fish.age)
-		if !oldest_fish or fish.age > oldest_fish.age:
-			oldest_fish = fish
-	tank.remove_child(oldest_fish)		
+	print(len(children))
+	if len(children) > 0:
+		var oldest_fish = children[0]
+		for fish in children:
+			if fish.age > oldest_fish.age:
+				oldest_fish = fish
+		tank.remove_child(oldest_fish)		
 	#tank.remove_child(children[0])

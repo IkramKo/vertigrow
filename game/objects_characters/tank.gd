@@ -50,6 +50,6 @@ func get_all_fish():
 	var children = self.get_children()
 	var fish = []
 	for child in children:
-		if "fish" in child.get_name().to_lower():
+		if "characterbody" in child.get_name().to_lower() or "fish" in child.get_name().to_lower():
 			fish.append(child)
 	return fish
