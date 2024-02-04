@@ -12,7 +12,7 @@ func _ready():
 func init():
 	self.sprite = get_child(0).get_child(0)
 
-func kill_kale():
+func kill():
 	if health <= 0:
 		self.sprite.texture = dead_kale
 

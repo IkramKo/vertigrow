@@ -12,15 +12,12 @@ func _ready():
 func init():
 	self.sprite = get_child(0).get_child(0)
 
-func kill_tomato():
+func kill():
 	if health <= 0:
 		self.sprite.texture = dead_tomato
 
 func set_health(health):	
 	self.health = health
-
-func get_health():
-	return self.health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
