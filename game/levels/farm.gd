@@ -13,6 +13,8 @@ var growbed = get_child(3)
 
 var curr_water_quality = 7
 
+var stats_panel = get_child(4)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init()
@@ -21,6 +23,7 @@ func init():
 	self.fish_tank = get_child(1)
 	self.shelves = get_child(2)
 	self.growbed = get_child(3)
+	self.stats_panel = get_child(4)
 	setup_age_timer()
 	setup_health_timer()
 
@@ -98,8 +101,11 @@ func asses_farm_stability():
 		self.fish_tank.reduce_tank_health()
 	
 	#print("Water quality: ", self.curr_water_quality)
-	#print("Waste rate:", total_waste_rate)
-	
+	print("Waste rate:", total_waste_rate)
+	print("Filter rate:", total_filtering_rate)
+	self.stats_panel.get_child(0).text = str(round(self.curr_water_quality * 100)/100)
+	self.stats_panel.get_child(3).text = str(round(total_waste_rate * 100)/100)
+	self.stats_panel.get_child(4).text = str(round(total_filtering_rate * 100)/100)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
