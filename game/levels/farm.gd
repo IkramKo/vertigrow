@@ -2,7 +2,7 @@ extends Node2D
 
 # timer vcars
 var timer = Timer.new()
-var age_increment_interval = 10
+var age_increment_interval = 120
 
 var fish_tank = get_child(1)
 var shelves = get_child(2)
