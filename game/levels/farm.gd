@@ -1,5 +1,9 @@
 extends Node2D
 
+# timer vcars
+var timer = Timer.new()
+var age_increment_interval = 10
+
 var fish_tank = get_child(1)
 var shelves = get_child(2)
 var growbed = get_child(3)
@@ -15,6 +19,26 @@ func init():
 	self.shelves = get_child(2)
 	self.growbed = get_child(3)
 	calc_water_quality()
+	setup_age_timer()
+
+func setup_age_timer():
+	timer.set_wait_time(age_increment_interval)
+	timer.set_one_shot(false)
+	timer.connect("timeout", _on_age_timer_timeout)
+	add_child(timer)
+	timer.start()
+
+
+func _on_age_timer_timeout():
+	#_increase_plant_age()
+	_increase_fish_age()
+
+func _increase_fish_age():
+	var children = fish_tank.get_all_fish()
+	
+	for fish in children:
+		fish.increase_age()
+		
 
 func calc_water_quality():
 

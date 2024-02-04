@@ -54,6 +54,9 @@ func set_health(health):
 func set_reproductive_rates(rate):
 	reproduction_rate = rate
 
+func increase_age():
+	self.age += 1
+
 # Game loop	
 #func _physics_process(delta):
 	#movement = direction * speed * delta

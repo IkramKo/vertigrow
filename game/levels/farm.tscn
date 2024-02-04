@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://objects_characters/kale_seedbag.tscn" id="7_kkfxx"]
 [ext_resource type="PackedScene" uid="uid://b6oqs1vntxoej" path="res://objects_characters/fish_bag.tscn" id="8_ck64m"]
 [ext_resource type="PackedScene" path="res://objects_characters/gardening_shovel.tscn" id="9_howm3"]
-[ext_resource type="PackedScene" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
+[ext_resource type="PackedScene" uid="uid://ci7h1asps1urw" path="res://objects_characters/fishnet.tscn" id="10_ov42f"]
 [ext_resource type="Script" path="res://objects_characters/fish_bag.gd" id="11_nnbw1"]
 [ext_resource type="PackedScene" uid="uid://ccdul6ay2pf13" path="res://objects_characters/growbed/growbed.tscn" id="12_rv0us"]
 [ext_resource type="PackedScene" uid="uid://omwq1guf4ale" path="res://objects_characters/plants/tomato_row.tscn" id="13_137p6"]

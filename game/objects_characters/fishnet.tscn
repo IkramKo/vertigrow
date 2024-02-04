@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjcg7echwx5bs"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7h1asps1urw"]
 
+[ext_resource type="Script" path="res://objects_characters/fishnet.gd" id="1_6v7g5"]
 [ext_resource type="Texture2D" uid="uid://b1cnnroj0u82b" path="res://assets/fishnet.png" id="1_8tmle"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmmkk"]
@@ -7,6 +8,7 @@ radius = 500.703
 
 [node name="fishnet" type="Node2D"]
 scale = Vector2(0.1, 0.1)
+script = ExtResource("1_6v7g5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
