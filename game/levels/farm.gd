@@ -69,10 +69,15 @@ func asses_farm_stability():
 	var kale_row_f_rate = 0 
 	var basil_row_f_rate = 0
 	
-	if kale_row.has_method("get_filtering_rate") and tomato_row.has_method("get_filtering_rate") and basil_row.has_method("get_filtering_rate"):
+	if kale_row.has_method("get_filtering_rate"):
 		kale_row_f_rate = kale_row.get_filtering_rate()
+		print("HELLO KALE")
+	if tomato_row.has_method("get_filtering_rate"):
 		tomato_row_f_rate = tomato_row.get_filtering_rate()
+		print("HELLO TOMATO")
+	if basil_row.has_method("get_filtering_rate"):
 		basil_row_f_rate = kale_row.get_filtering_rate()
+		print("HELLO BASIL")
 	
 	var total_filtering_rate = tomato_row_f_rate + kale_row_f_rate + basil_row_f_rate
 	# If < 0: we have too many plants -> not enough nutrients for each plant = --health for plants
@@ -101,8 +106,8 @@ func asses_farm_stability():
 		self.fish_tank.reduce_tank_health()
 	
 	#print("Water quality: ", self.curr_water_quality)
-	print("Waste rate:", total_waste_rate)
-	print("Filter rate:", total_filtering_rate)
+	#print("Waste rate:", total_waste_rate)
+	#print("Filter rate:", total_filtering_rate)
 	self.stats_panel.get_child(0).text = str(round(self.curr_water_quality * 100)/100)
 	self.stats_panel.get_child(3).text = str(round(total_waste_rate * 100)/100)
 	self.stats_panel.get_child(4).text = str(round(total_filtering_rate * 100)/100)
