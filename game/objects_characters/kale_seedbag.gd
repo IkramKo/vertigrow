@@ -26,7 +26,7 @@ func _input(event):
 			load_kale_row()
 
 func load_kale_row():
-	if !self.growbed.get_kale_row():
+	if !self.growbed.get_kale_row().has_method("set_health"):
 		var new_kale_row = kale_scene.instantiate()
 		new_kale_row.name = "kale_row"
 		new_kale_row.position = Vector2(455, 220)

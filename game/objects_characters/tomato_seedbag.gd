@@ -26,7 +26,7 @@ func _input(event):
 			load_tomato_row()
 
 func load_tomato_row():
-	if !self.growbed.get_tomato_row():
+	if !self.growbed.get_tomato_row().has_method("set_health"):
 		var new_tomato_row = tomato_scene.instantiate()
 		new_tomato_row.name = "tomato_row"
 		new_tomato_row.position = Vector2(445, 485)

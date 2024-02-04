@@ -26,8 +26,7 @@ func _input(event):
 			load_basil_row()
 
 func load_basil_row():
-	if !self.growbed.get_basil_row():
-
+	if !self.growbed.get_basil_row().has_method("set_health"):
 		var new_basil_row = basil_scene.instantiate()
 		new_basil_row.name = "basil_row"
 		new_basil_row.position = Vector2(453, 387)

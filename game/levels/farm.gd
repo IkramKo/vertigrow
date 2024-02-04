@@ -93,8 +93,8 @@ func asses_farm_stability():
 			basil_row.set_health(basil_row.get_health() - 1)
 		self.fish_tank.reduce_tank_health()
 	
-	print("Water quality: ", self.curr_water_quality)
-	print("Waste rate:", total_waste_rate)
+	#print("Water quality: ", self.curr_water_quality)
+	#print("Waste rate:", total_waste_rate)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
