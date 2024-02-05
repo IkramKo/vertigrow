@@ -5,7 +5,7 @@ var age_timer = Timer.new()
 var age_increment_interval = 10
 
 var health_timer = Timer.new()
-var health_change_interval = 60
+var health_change_interval = 10
 
 var farm_stat_timer = Timer.new()
 var farm_stat_interval = 1
@@ -155,6 +155,9 @@ func asses_farm_stability():
 		if basil_row.has_method("set_health"):
 			basil_row.set_health(basil_row.get_health() - 1)
 		self.fish_tank.reduce_tank_health()
+	
+	# Reproduce fish
+	self.shelves.get_child(6).load_fish()
 	
 	#print("Water quality: ", self.curr_water_quality)
 	#print("Waste rate:", total_waste_rate)
